@@ -8,7 +8,7 @@ uint64_t phiX(mpz_t X) {
 	mpz_t i;
 	mpz_init_set_ui(i, 2);
 	while (mpz_cmp(X, i) > 0) {
-		if (MillerRabin(i) == 0) {
+		if (!MillerRabin(i)) {
 			a = a + 1;
 		}
 		mpz_add_ui(i, i, 1);
